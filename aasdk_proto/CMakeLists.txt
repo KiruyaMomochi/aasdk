@@ -12,4 +12,7 @@ set_target_properties(aasdk_proto PROPERTIES VERSION ${AASDK_VERSION_STRING}
                                           SOVERSION ${AASDK_VERSION_MAJOR})
 
 INSTALL(TARGETS aasdk_proto DESTINATION lib)
+install(DIRECTORY ${CMAKE_CURRENT_BINARY_DIR} DESTINATION include
+    FILES_MATCHING PATTERN *.h
+    PATTERN CMakeFiles EXCLUDE )
 					  

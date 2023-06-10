@@ -77,7 +77,8 @@ set(AASDK_VERSION_STRING ${AASDK_VERSION_MAJOR}.${AASDK_VERSION_MINOR}.${AASDK_V
 set_target_properties(aasdk PROPERTIES VERSION ${AASDK_VERSION_STRING}
                                           SOVERSION ${AASDK_VERSION_MAJOR})
 
-INSTALL(TARGETS aasdk DESTINATION lib)
+install(TARGETS aasdk DESTINATION lib COMPONENT libraries)
+install(DIRECTORY include/f1x/aasdk DESTINATION include COMPONENT headers)
 
 		      
 if(AASDK_TEST)
